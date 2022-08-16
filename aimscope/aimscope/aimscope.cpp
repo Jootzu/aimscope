@@ -9,7 +9,7 @@ DWORD ProcessID;
 
 DWORD WINAPI crosshair()
 {
-	HWND gamehwnd = FindWindowA("Valve001", 0);
+	HWND gamehwnd = FindWindowA("Valve001", 0); 
 	GetWindowThreadProcessId(gamehwnd, &ProcessID);
 	if (gamehwnd) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
@@ -21,15 +21,13 @@ DWORD WINAPI crosshair()
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
 		cout << "[WARNING] CSGO is not running !";
 	}
-	//SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
-	//cout << "\nCreated By Ulysse AKA Jooztu for scoutgirls group! \n" << endl;
 
 	HDC gamehdc = GetDC(0);
 
 	RECT rect;
 	int wc = 8;
 	int hc = 8;
-	int xPos = ((GetSystemMetrics(SM_CXSCREEN) / 2) - (wc / 2));
+	int xPos = ((GetSystemMetrics(SM_CXSCREEN) / 2) - (wc / 2)); 
 	int yPos = ((GetSystemMetrics(SM_CYSCREEN) / 2) - (hc / 2));
 
 	HBRUSH br = CreateSolidBrush(RGB(255, 0, 0)); ;
@@ -48,7 +46,7 @@ DWORD WINAPI crosshair()
 int main()
 {
 
-	SetConsoleTitleA("Aimscope"); // le titre de la fenÃªtre 
+	SetConsoleTitleA("Aimscope by Jootzu/Ulysse"); // le titre de la fenÃªtre 
 
 	HWND hwnd = GetConsoleWindow();// le handle de la console
 	MoveWindow(hwnd, 0, 0, 500, 220, TRUE); // redimmensionnement de la console
